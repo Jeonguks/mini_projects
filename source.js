@@ -1,3 +1,8 @@
+const answer = generateNumber();
+var ball =0;
+var strike =0;
+var out = 0;
+
 function generateNumber(){
     var answer =[];
     while(answer.length<4){
@@ -16,6 +21,28 @@ function isValue(inputValue){
     }
     return 0;
 }
+function checkValue(inputValue){
+    for(let i=0;i<4;i++){
+        if(inputValue[i]==answer[i]){
+            strike+=1;
+        }
+        else if(inputValue.includes(answer[i])){
+            ball+=1;
+        }
+        else{
+            out+=1;
+        }
+    }
+    if(strike==4){
+        alert("정답입니다!");
+    }
+    else{
+        alert(ball+" ball "+ strike + " strike " + out +" out ");
+    }
+    strike=0;
+    ball=0;
+    out=0;
+}
 document.querySelector("#btnInput").onclick = function (){
     var inputValue = document.querySelector("#numInput").value;
     if(inputValue ===""){
@@ -28,7 +55,6 @@ document.querySelector("#btnInput").onclick = function (){
         alert("각 자리수가 중복되지 않은 수만 입력하세요.");
     } 
     else{
-        alert("입력한 숫자: " + inputValue);
+        checkValue(inputValue);
     }
 }
-generateNumber();
