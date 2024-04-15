@@ -37,10 +37,14 @@ function checkValue(inputValue){
     if(strike==4){
         alert("정답입니다!");
     }
+    else if(j>14&&strike!=4){
+        alert("GAME OVER!");
+    }
     else{
         var listDiv = document.getElementsByClassName("list")[0];
         var listP  = document.createElement("p");
-        var resultValue = document.createTextNode("입력값: "+inputValue +" "+j+"회차 결과 : " + ball+" ball "+ strike + " strike " + out +" out ")
+        var resultValue = document.createTextNode("입력값: " + inputValue + " " + j + "회차 결과 : " +
+         + ball + " ball " + strike + " strike " + out + " out ");
         listP.appendChild(resultValue);
         listDiv.appendChild(listP);
     }
@@ -63,4 +67,5 @@ document.querySelector("#btnInput").onclick = function (){
     else{
         checkValue(inputValue);
     }
+    document.querySelector("#numInput").value="";
 }
