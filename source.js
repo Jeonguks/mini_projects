@@ -2,6 +2,7 @@ const answer = generateNumber();
 var ball =0;
 var strike =0;
 var out = 0;
+var j=1;
 
 function generateNumber(){
     var answer =[];
@@ -37,16 +38,21 @@ function checkValue(inputValue){
         alert("정답입니다!");
     }
     else{
-        alert(ball+" ball "+ strike + " strike " + out +" out ");
+        var listDiv = document.getElementsByClassName("list")[0];
+        var listP  = document.createElement("p");
+        var resultValue = document.createTextNode("입력값: "+inputValue +" "+j+"회차 결과 : " + ball+" ball "+ strike + " strike " + out +" out ")
+        listP.appendChild(resultValue);
+        listDiv.appendChild(listP);
     }
     strike=0;
     ball=0;
     out=0;
+    j++
 }
 document.querySelector("#btnInput").onclick = function (){
     var inputValue = document.querySelector("#numInput").value;
-    if(inputValue ===""){
-        alert("숫자를 입력하세요!")
+    if(inputValue ===""||parseInt(inputValue)<1){
+        alert("입력값이 올바르지 않습니다!")
     } 
     else if(inputValue.length!=4){
         alert("4자리 숫자만 입력하세요!");
