@@ -5,16 +5,17 @@
 }
 .rules
 {
-    width: 500px;
+    max-width: 400px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: aqua;
     text-align: left;
 }
-.header
+.header,.list
 {
-    width: 500px;
-    margin :auto;
+    max-width: 400px;
+    width : 100%;
+    margin: auto;
 }
 .inputNumber
 {
