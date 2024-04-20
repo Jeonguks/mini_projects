@@ -1,3 +1,7 @@
+.body
+{
+    min-width: 410px;
+}
 .rulesc,.list,body h1
 {
     text-align: center;
