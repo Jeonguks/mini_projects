@@ -1,25 +1,34 @@
-.body
-{
-    min-width: 410px;
-}
-.rulesc,.list,body h1
+
+.rulesc,.list,body h1,.menu
 {
     text-align: center;
-    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .rules
 {
+    min-width: 380px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width: 400px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: aqua;
     text-align: left;
+    margin: auto;
+    margin-bottom: 10px;
 }
 .header,.list
 {
+    min-width: 310px;
     max-width: 400px;
     width : 100%;
     margin: auto;
+    font-size: 12px;
+}
+.list
+{
+    font-size:medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .inputNumber,.gamestart
 {

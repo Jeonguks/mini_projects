@@ -1,3 +1,4 @@
+
 const answer = generateNumber();
 var ball =0;
 var strike =0;
@@ -39,7 +40,7 @@ function checkValue(inputValue){
         }
     }
     if(strike==4){
-        alert("정답입니다! \nClaer Time: "+seconds+"초");
+        alert("정답입니다! \nClear Time: "+seconds+"초");
         stopTimer();
         location.reload();
     }
@@ -47,12 +48,23 @@ function checkValue(inputValue){
         alert("GAME OVER!");
     }
     else{
+        // var listDiv = document.getElementsByClassName("list")[0];
+        // var listP  = document.createElement("p");
+        // var resultValue = document.createTextNode(j + "회차  : " +"<b>"+inputValue+"</b> "
+        //  + ball + " Ball " + strike + " Strike " + out + " Out ");
+        // listP.appendChild(resultValue);
+        // listDiv.appendChild(listP);
         var listDiv = document.getElementsByClassName("list")[0];
         var listP  = document.createElement("p");
-        var resultValue = document.createTextNode("입력값: " + inputValue + " " + j + "회차 결과 : " +
-         + ball + " ball " + strike + " strike " + out + " out ");
-        listP.appendChild(resultValue);
+        var boldElement = document.createElement("b");
+        boldElement.textContent = inputValue;
+
+        listP.innerHTML = j + "회  : ";
+        listP.appendChild(boldElement);
+        listP.innerHTML += " " + ball + " Ball " + strike + " Strike " + out + " Out ";
+
         listDiv.appendChild(listP);
+
     }
     strike=0;
     ball=0;
@@ -62,16 +74,21 @@ function checkValue(inputValue){
 function hideInput(){
     let inputNumberDiv = document.querySelector(".inputNumber");
     let listDiv = document.querySelector(".list");
+    let postRankingDiv = document.querySelector(".postRanking");
     inputNumberDiv.style.visibility ='hidden'
     listDiv.style.visibility ='hidden'
+    postRankingDiv.style.display ='none';
 }
 function gameStart(){
     let inputNumberDiv = document.querySelector(".inputNumber");
     let gamestartDiv = document.querySelector(".gamestart");
     let listDiv = document.querySelector(".list");
+    let rulesDiv = document.querySelector(".rules");
     inputNumberDiv.style.visibility ='visible'
     listDiv.style.visibility ='visible'
     gamestartDiv.style.display ='none';
+    rulesDiv.style.display ='none';
+    
     startTimer();
 }
 function startTimer() {
@@ -92,9 +109,12 @@ function stopTimer() {
 }
 document.querySelector("#btnInput").onclick = function (){
     var inputValue = document.querySelector("#numInput").value;
-    if(parseInt(inputValue)<1||isNaN(inputValue)){
-        alert("입력값이 올바르지 않습니다!")
+    if(inputValue=="00000000"){ //Return Answer For Test
+        alert(answer);
     } 
+    else if(parseInt(inputValue)<1||isNaN(inputValue)){
+        alert("입력값이 올바르지 않습니다!")
+    }
     else if(inputValue.length!=4){
         alert("4자리 숫자만 입력하세요!");
     } 

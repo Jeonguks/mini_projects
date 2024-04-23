@@ -10,18 +10,27 @@
 <body>
     <header class="header">
     <h1>숫자야구게임</h1>
-    <dl class="rules">
-        <dt class="rulesc">숫자야구게임 규칙</dt>
-        <ol>
-            <li>사용되는 숫자는 0에서 9까지 서로 다른 4자리 숫자</li>
-            <li>숫자는 맞지만 위치가 틀렸을 때는 볼</li>
-            <li>숫자와 위치가 전부 맞으면 스트라이크</li>
-            <li>숫자와 위치가 전부 틀리면 아웃</li>
-            <li><strong>15회</strong> 이내에 정답을 못맞히면 Game Over 입니다.</li>
-        </ol>
-    </dl>
     </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/rank.html">Ranking</a></li>
+            <li><a href="/rule.html">Rules</a></li>
+        </ul>
+    </nav>
     <main>
+        <div>
+            <dl class="rules">
+                <dt class="rulesc">숫자야구게임 규칙</dt>
+                <ol>
+                    <li>사용되는 숫자는 0에서 9까지 서로 다른 4자리 숫자</li>
+                    <li>숫자는 맞지만 위치가 틀렸을 때는 볼</li>
+                    <li>숫자와 위치가 전부 맞으면 스트라이크</li>
+                    <li>숫자와 위치가 전부 틀리면 아웃</li>
+                    <li><strong>15회</strong> 이내에 정답을 못맞히면 Game Over 입니다.</li>
+                </ol>
+            </dl>
+        </div>
         <div class="gamestart">
             <input type="button" id="gamestart" value="GAME START" onclick="gameStart()">
         </div>
@@ -30,6 +39,12 @@
             <button id="btnInput">입력</button>
         </div>
         <div class="list"><h2>경기 결과</h2></div>
+        <form action="" method="get" class="postRanking">
+            <h2>랭킹등록</h3>
+                <input type="text" id="name" placeholder="이름을 입력하세요" required />
+                <input type="submit" value="랭킹 등록">
+                <input type="button" id="newGame" value="newGame">
+        </form>
     </main>
     <script src="source.js"></script>
     </body>
