@@ -1,5 +1,31 @@
-
-.rulesc,.list,body h1,.menu
+.menu{
+  display: flex;
+  background-color: aqua;
+  padding: 8px 12px;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    justify-content: center;
+}
+.menu li{
+    padding: 8px 30px;
+}
+.header{
+    text-align: center;
+    background-color: aqua;
+    margin: 0;
+}
+.header h1{
+    margin: 0;
+    text-align: center;
+}
+main{
+    padding: 15px;
+}
+.rulesc,.list,body h1
 {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,7 +43,7 @@
     margin: auto;
     margin-bottom: 10px;
 }
-.header,.list
+.list
 {
     min-width: 310px;
     max-width: 400px;
