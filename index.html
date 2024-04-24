@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bullsNcows</title>
-    
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -14,22 +13,20 @@
     <nav class="menu">
         <ul>
             <li><a href="/mini_projects/index.html">Home</a></li>
-            <li><a href="/mini_projects/rank.html">Ranking</a></li>
-            <li><a href="/mini_projects/rule.html">Rules</a></li>
+            <li><a href="#">Ranking</a></li>
+            <li><a href="#" onclick="showRules()">Rules</a></li>
         </ul>
     </nav>
     <main>
-        <div>
-            <dl class="rules">
-                <dt class="rulesc">숫자야구게임 규칙</dt>
-                <ol>
-                    <li>사용되는 숫자는 0에서 9까지 서로 다른 4자리 숫자</li>
-                    <li>숫자는 맞지만 위치가 틀렸을 때는 볼</li>
-                    <li>숫자와 위치가 전부 맞으면 스트라이크</li>
-                    <li>숫자와 위치가 전부 틀리면 아웃</li>
-                    <li><strong>15회</strong> 이내에 정답을 못맞히면 Game Over 입니다.</li>
-                </ol>
-            </dl>
+        <div class="rules">
+            <h3>숫자야구게임 규칙</h3>
+            <span id='close' onclick="hideRules()">&times;</span>
+            <ol>
+                <li>사용되는 숫자는 0에서 9까지 <b>서로 다른 4자리 숫자</b></li>
+                <li>숫자는 맞지만 위치가 틀렸을 때는 <b>볼</b></li>
+                <li>숫자와 위치가 전부 맞으면 <b>스트라이크</b></li>
+                <li><strong>15회</strong> 이내에 정답을 못맞히면 Game Over 입니다.</li>
+            </ol>
         </div>
         <div class="gamestart">
             <input type="button" id="gamestart" value="GAME START" onclick="gameStart()">
@@ -43,7 +40,6 @@
             <h2>랭킹등록</h3>
                 <input type="text" id="name" placeholder="이름을 입력하세요" required />
                 <input type="submit" value="랭킹 등록">
-                <input type="button" id="newGame" value="newGame">
         </form>
     </main>
     <script src="source.js"></script>

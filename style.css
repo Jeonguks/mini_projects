@@ -1,3 +1,6 @@
+:root{
+    min-width: 400px;
+}
 .menu{
   display: flex;
   background-color: aqua;
@@ -12,6 +15,9 @@
 }
 .menu li{
     padding: 8px 30px;
+}
+.menu li:hover{
+    background-color: skyblue;
 }
 .header{
     text-align: center;
@@ -30,9 +36,12 @@ main{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.rulesc{
+    font-size: 17px;
+    font-weight: bold;
+}
 .rules
 {
-    min-width: 380px;
     font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width: 400px;
@@ -42,6 +51,19 @@ main{
     text-align: left;
     margin: auto;
     margin-bottom: 10px;
+}
+.rules h3,
+.rules span {
+    padding-left: 33%;
+    display: inline;
+}
+#close {
+    cursor: pointer;
+	display: inline-block;
+	padding: 2px 5px;
+	font-weight: 700;
+	text-shadow: 0 1px 0 #fff;
+	font-size: 1.3rem;
 }
 .list
 {
@@ -56,7 +78,9 @@ main{
     font-size:medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.inputNumber,.gamestart
+.inputNumber,
+.gamestart,
+.postRanking
 {
     margin: auto;
     max-width: 200px;
@@ -64,13 +88,26 @@ main{
     position: relative;
     display: flex;
 }
+.btnNewgame{
+    margin:auto;
+    margin-top: 10px;
+    max-width: 200px;
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items:center;
+}
 .inputNumber input,
-.gamestart input
+.gamestart input,
+.postRanking #name
 {
     width: 100%;
     border-radius: 15px;
 }
-.inputNumber button
+.inputNumber button,
+.postRanking #submit
 {
     position: absolute;
     top: 5px;
@@ -78,4 +115,14 @@ main{
     right: 5px;
     border-radius: 10px;
     background-color: aqua;
+}
+.inputNumber button:hover,
+.gamestart input:hover,
+.postRanking #submit:hover,
+.btnNewgame:hover
+{
+    background-color: skyblue;
+}
+#te{
+    text-align: center;
 }

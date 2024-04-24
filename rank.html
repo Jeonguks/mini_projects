@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>bullsNcows</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>숫자야구게임</h1>
     </header>
     <nav class="menu">
         <ul>
-            <li><a href="/mini_projects/index.html">Home</a></li>
-            <li><a href="/mini_projects/rank.html">Ranking</a></li>
-            <li><a href="/mini_projects/rule.html">Rules</a></li>
+            <li class="menubtn"><a href="/mini_projects/index.html">Home</a></li>
+            <li class="menubtn"><a href="/mini_projects/rank.html">Ranking</a></li>
+            <li class="menubtn"><a href="/mini_projects/rule.html">Rules</a></li>
         </ul>
     </nav>
-    <div class="rankingList">
+    <!-- <div class="rankingList">
         <h2>RANKING</h2>
         <ol>
             <li>test1</li>
             <li>Rank2</li>
         </ol>
-    </div>
+    </div> -->
+    <h2 id="te">랭킹등록</h2>
+    <form action="" method="get" class="postRanking">
+            <input type="text" id="name" placeholder="이름을 입력하세요" required />
+            <!-- <input type="text" name="rankTime" placeholder="Time Test" required /> -->
+            <input type="submit" id="submit" value="랭킹등록">
+    </form>
+    <button class="btnNewgame">새로운 게임하기</button>
+    
 </body>
 </html>
