@@ -48,12 +48,6 @@ function checkValue(inputValue){
         alert("GAME OVER!");
     }
     else{
-        // var listDiv = document.getElementsByClassName("list")[0];
-        // var listP  = document.createElement("p");
-        // var resultValue = document.createTextNode(j + "회차  : " +"<b>"+inputValue+"</b> "
-        //  + ball + " Ball " + strike + " Strike " + out + " Out ");
-        // listP.appendChild(resultValue);
-        // listDiv.appendChild(listP);
         var listDiv = document.getElementsByClassName("list")[0];
         var listP  = document.createElement("p");
         var boldElement = document.createElement("b");
@@ -77,7 +71,6 @@ function hideInput(){
     let postRankingDiv = document.querySelector(".postRanking");
     inputNumberDiv.style.visibility ='hidden'
     listDiv.style.visibility ='hidden'
-    postRankingDiv.style.display ='none';
 }
 function gameStart(){
     let inputNumberDiv = document.querySelector(".inputNumber");
@@ -88,7 +81,6 @@ function gameStart(){
     listDiv.style.visibility ='visible'
     gamestartDiv.style.display ='none';
     rulesDiv.style.display ='none';
-    
     startTimer();
 }
 function startTimer() {
@@ -135,29 +127,3 @@ function showRules(){
     rulesDiv.style.display ="block";
     
 }
-function postRanking(e) {
-    e.preventDefault(); /* POST 이벤트 중지 */
-    const rankName = e.target.name.value;
-    const rankTime = e.target.rankTime.value;
-    if (!rankName || !rankTime) {
-      return alert('이름과 시간을 입력하시오');
-    }
-  
-    const url = 'https://asia-northeast3-winged-idiom-421311.cloudfunctions.net/function-1';
-    const data = { rankName, rankTime };
-    fetch(url, {
-      method: 'get',
-      body: JSON.stringify(data),
-    })
-    .then(response => response.text())
-    .then(data => {
-      console.log(data); // 서버로부터 받은 응답을 콘솔에 출력
-      // 여기서 받은 데이터를 필요에 따라 다른 동작에 활용할 수 있습니다.
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }
-  
-  document.querySelector('.postRanking').addEventListener('submit', postRanking);
-  

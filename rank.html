@@ -12,25 +12,21 @@
     </header>
     <nav class="menu">
         <ul>
-            <li class="menubtn"><a href="/mini_projects/index.html">Home</a></li>
-            <li class="menubtn"><a href="/mini_projects/rank.html">Ranking</a></li>
-            <li class="menubtn"><a href="/mini_projects/rule.html">Rules</a></li>
+            <li><a href="/mini_projects/index.html">Home</a></li>
+            <li><a href="/mini_projects/rank.html">Ranking</a></li>
+            <li><a href="#" onclick="showRules()">Rules</a></li>
         </ul>
     </nav>
-    <!-- <div class="rankingList">
-        <h2>RANKING</h2>
-        <ol>
-            <li>test1</li>
-            <li>Rank2</li>
-        </ol>
-    </div> -->
-    <h2 id="te">랭킹등록</h2>
-    <form action="" method="get" class="postRanking">
-            <input type="text" id="name" placeholder="이름을 입력하세요" required />
-            <!-- <input type="text" name="rankTime" placeholder="Time Test" required /> -->
-            <input type="submit" id="submit" value="랭킹등록">
+    <p>랭킹 등록 아직 안됨 ㅜ</p>
+    <button id="fetchDataBtn">랭킹 가져오기</button>
+    <div id="dataContainer"></div>
+    <form id="myForm" style="display:none;"">
+        <input type="text" id="nickname" name="nickname" placeholder="nickname" required><br><br>
+        <input type="number" id="rank" name="rank" placeholder="rank" required><br><br>
+        <input type="date" id="time" name="time"><br><br>
+        <button type="submit">Submit</button>
     </form>
-    <button class="btnNewgame">새로운 게임하기</button>
-    
+    <script type="module" src="app.js"></script>
+    <script src="source.js"></script>
 </body>
 </html>
