@@ -13,7 +13,6 @@
     <nav class="menu">
         <ul>
             <li><a href="/mini_projects/index.html">Home</a></li>
-            <li><a href="/mini_projects/index.html">새 게임</a></li>
             <li><a href="/mini_projects/rank.html">Ranking</a></li>
             <li><a href="#" onclick="showRules()">Rules</a></li>
         </ul>
@@ -37,6 +36,10 @@
             <button id="btnInput">입력</button>
         </div>
         <div class="list"><h2>경기 결과</h2></div>
+        <form class="postRank" style="display:none;">
+            <input type="text" id="nickname" name="nickname" placeholder="랭킹에 등록할 닉네임" required>
+            <button type="submit" id="submitBtn">랭킹 등록</button>
+        </form>
     </main>
     <script src="source.js"></script>
     </body>

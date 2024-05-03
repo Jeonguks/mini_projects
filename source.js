@@ -7,6 +7,7 @@ var j=1;
 var startTime;
 var timerInterval;
 var seconds;
+
 window.onload=hideInput();
 
 function generateNumber(){
@@ -27,6 +28,7 @@ function isValue(inputValue){
     }
     return 0;
 }
+
 function checkValue(inputValue){
     for(let i=0;i<4;i++){
         if(inputValue[i]==answer[i]){
@@ -41,18 +43,23 @@ function checkValue(inputValue){
     }
     if(strike==4){
         alert("정답입니다! \nClear Time: "+seconds+"초");
+        if(confirm("랭킹을 등록하시겠습니까?")){
+            showRankDiv();
+        }
+        else{
+            location.reload();
+        }
         stopTimer();
-        location.reload();
     }
     else if(j>14&&strike!=4){
-        alert("GAME OVER!");
+        alert("GAME OVER! \n정답은 "+answer[0]+answer[1]+answer[2]+answer[3]+" 입니다!");
+        location.reload();
     }
     else{
         var listDiv = document.getElementsByClassName("list")[0];
         var listP  = document.createElement("p");
         var boldElement = document.createElement("b");
         boldElement.textContent = inputValue;
-
         listP.innerHTML = j + "회  : ";
         listP.appendChild(boldElement);
         listP.innerHTML += " " + ball + "B " + strike + "S ";
@@ -68,20 +75,27 @@ function checkValue(inputValue){
 function hideInput(){
     let inputNumberDiv = document.querySelector(".inputNumber");
     let listDiv = document.querySelector(".list");
-    let postRankingDiv = document.querySelector(".postRanking");
-    inputNumberDiv.style.visibility ='hidden'
-    listDiv.style.visibility ='hidden'
+    inputNumberDiv.style.display ='none'
+    listDiv.style.display ='none'
 }
 function gameStart(){
     let inputNumberDiv = document.querySelector(".inputNumber");
     let gamestartDiv = document.querySelector(".gamestart");
     let listDiv = document.querySelector(".list");
     let rulesDiv = document.querySelector(".rules");
-    inputNumberDiv.style.visibility ='visible'
-    listDiv.style.visibility ='visible'
+    inputNumberDiv.style.display ='grid'
+    listDiv.style.display ='block'
     gamestartDiv.style.display ='none';
     rulesDiv.style.display ='none';
     startTimer();
+}
+function showRankDiv(){
+    let postRankingDiv = document.querySelector(".postRank");
+    let inputNumberDiv = document.querySelector(".inputNumber");
+    let listDiv = document.querySelector(".list");
+    postRankingDiv.style.display ="block";
+    inputNumberDiv.style.display ='none' //visiablity > display
+    listDiv.style.display ='none'
 }
 function startTimer() {
     startTime = new Date(); // 시작 시간 기록
@@ -127,3 +141,14 @@ function showRules(){
     rulesDiv.style.display ="block";
     
 }
+function loadTime(){
+    let today = new Date();
+    console.log(today);
+}
+
+const postRankForm = document.querySelector('.postRank');
+postRankForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("랭킹등록은 아직 안됩니다 ! ")
+    location.reload();
+});

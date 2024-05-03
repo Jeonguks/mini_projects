@@ -5,16 +5,21 @@
   display: flex;
   background-color: aqua;
   padding: 8px 12px;
+  justify-content: center;
 }
 .menu ul{
     list-style: none;
     display: flex;
     margin: 0;
     padding-left: 0;
-    justify-content: center;
+    
 }
 .menu li{
     padding: 8px 30px;
+}
+.menu li a {
+    text-decoration: none;
+    font-size: 18px;
 }
 .menu li:hover{
     background-color: skyblue;
@@ -23,6 +28,7 @@
     text-align: center;
     background-color: aqua;
     margin: 0;
+    font-family: 'SUITE-Regular';
 }
 .header h1{
     margin: 0;
@@ -34,7 +40,6 @@ main{
 .rulesc,.list,body h1
 {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .rulesc{
     font-size: 17px;
@@ -43,7 +48,6 @@ main{
 .rules
 {
     font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width: 400px;
     border: 2px solid black;
     border-radius: 10px;
@@ -76,17 +80,16 @@ main{
 .list
 {
     font-size:medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .inputNumber,
-.gamestart,
-.postRanking
+.gamestart
 {
     margin: auto;
     max-width: 200px;
     height: 50px;
     position: relative;
     display: flex;
+    font-family: 'SUITE-Regular';
 }
 .btnNewgame{
     margin:auto;
@@ -100,14 +103,12 @@ main{
     align-items:center;
 }
 .inputNumber input,
-.gamestart input,
-.postRanking #name
+.gamestart input
 {
     width: 100%;
     border-radius: 15px;
 }
-.inputNumber button,
-.postRanking #submit
+.inputNumber button
 {
     position: absolute;
     top: 5px;
@@ -118,11 +119,31 @@ main{
 }
 .inputNumber button:hover,
 .gamestart input:hover,
-.postRanking #submit:hover,
-.btnNewgame:hover
+.btnNewgame:hover,
+.postRank :hover
 {
     background-color: skyblue;
 }
 #te{
     text-align: center;
+}
+
+.postRank * {
+    margin: auto;
+    margin-top: 10px;
+    padding: 0px;
+    max-width: 200px;
+    height: 50px;
+    width: 100%;
+    display: grid;
+    border-radius: 15px;
+    position: relative;
+    align-content: center;
+}
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
 }
