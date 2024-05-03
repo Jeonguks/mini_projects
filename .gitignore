@@ -35,6 +35,6 @@ Temporary Items
 *.icloud
 
 # API KEY
-config.js
+.env
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
